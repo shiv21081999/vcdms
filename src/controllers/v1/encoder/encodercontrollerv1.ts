@@ -7,12 +7,24 @@ import { IFilteredRequest } from "../../../interfaces";
 class EncoderControllerV1 extends BaseController {
 
     /**
-     * @description .
+     * @description Get currently set properties of encoder.
      */
     public async GetEncoderPropertiesByPort(req: IFilteredRequest<ReqEncoderschemas>, res: Response, next: NextFunction) {
         try {
             const requestResult = await encoderServicesV1.GetEncoderPropertiesByPort(req.body);
-            return requestResult;
+            return res.send(requestResult);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    /**
+     * @description Get current status of encoder.
+     */
+    public async GetEncoderStatusByPort(req: IFilteredRequest<ReqEncoderschemas>, res: Response, next: NextFunction) {
+        try {
+            const requestResult = await encoderServicesV1.GetEncoderStatusByPort(req.body);
+            return res.send(requestResult);
         } catch (error) {
             return null;
         }

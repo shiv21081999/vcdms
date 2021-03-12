@@ -20,15 +20,19 @@ class MasterRouteV1 extends BaseRoutes {
         //   this._controller.RunProcess(req, res, next);
         // });
         this.router.get('/', (req, res, next) => {
-            res.send("server running scsx");
+            res.send("server running");
         });
 
         this.router.post('/getencoderpropertiesbyport',
             (req: Request, res: Response, next: NextFunction) => {
-                //console.log(req.body);
-                //res.send("Done");
                 encoderControllerV1.GetEncoderPropertiesByPort(req, res, next);
             });
+
+        this.router.post('/getencoderstatusbyport',
+            (req: Request, res: Response, next: NextFunction) => {
+                encoderControllerV1.GetEncoderStatusByPort(req, res, next);
+            });
+
 
         // this.router.get('/getencoderproperties',
         //   (req: Request, res: Response, next: NextFunction) => {

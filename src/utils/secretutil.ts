@@ -14,6 +14,8 @@ class SecretUtil {
     public ENCODER1_PORT = process.env.ENCODER1_PORT!;
     public ENCODER2_PORT = process.env.ENCODER2_PORT!;
     public ENCODER_DEVICE_PROPERTIES_PATH = process.env.ENCODER_DEVICE_PROPERTIES_PATH!;
+    public ENCODER_DEVICE_STATUS_PATH = process.env.ENCODER_DEVICE_STATUS_PATH!;
+    
 }
 
 export const secretUtil = new SecretUtil();
