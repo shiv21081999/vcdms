@@ -33,6 +33,16 @@ class MasterRouteV1 extends BaseRoutes {
                 encoderControllerV1.GetEncoderStatusByPort(req, res, next);
             });
 
+        this.router.post('/startencodingbyport',
+            (req: Request, res: Response, next: NextFunction) => {
+                encoderControllerV1.StartEncodingByPort(req, res, next);
+            });
+
+        this.router.post('/stopencodingbyport',
+            (req: Request, res: Response, next: NextFunction) => {
+                encoderControllerV1.StopEncodingByPort(req, res, next);
+            });
+
 
         // this.router.get('/getencoderproperties',
         //   (req: Request, res: Response, next: NextFunction) => {
